@@ -15,12 +15,12 @@ def parse_base64_from_file(file_path):
     # Find the index of the start marker
     start_index = next((i for i, line in enumerate(lines) if start_marker in line), None)
     if start_index is None:
-        raise ValueError("Start marker not found")
+        raise ValueError("No se encontro el marcador de inicio")
 
     # Find the index of the end marker
     end_index = next((i for i, line in enumerate(lines) if end_marker in line), None)
     if end_index is None:
-        raise ValueError("End marker not found")
+        raise ValueError("No se encontro el marcador de fin")
 
     # Extract base64-encoded data
     base64_data = ''.join(lines[start_index+1:end_index])
